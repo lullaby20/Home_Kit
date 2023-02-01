@@ -19,24 +19,35 @@ struct AddAccessoryView: View {
                         .blur(radius: 10)
                         .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
                         .opacity(1.0)
+                }
                     
                     VStack {
-                        Text("Add Accssory")
+                        HStack {
+                            Image(systemName: "plus.circle")
+                                .font(.system(size: 23))
+                                .padding(.leading, 10)
+                                .padding(.top, 10)
+                            
+                            Spacer()
+                        }
+                        Spacer()
+                        
+                        Text("Add Accessory")
                             .font(.system(size: 16))
                             .foregroundColor(.black)
-                            .padding(.top, 90)
-                            .padding(.trailing, 40)
+                            .frame(width: 160, alignment: .leading)
+                            .padding(.leading, 15)
+                            .padding(.bottom, 10)
                     }
-                    .frame(maxWidth: 168, minHeight: 147)
+                    .frame(width: 170, height: 150)
                     .background(Color("CustomGray"))
                     .cornerRadius(16)
-                    .padding(.bottom, 500)
-                    .padding(.trailing, 200)
+                    .padding(.leading, 15)
+                    
                     .navigationTitle("My Home")
                 }
             }
         }
-    }
     }
 
 struct AddAccessoryView_Previews: PreviewProvider {

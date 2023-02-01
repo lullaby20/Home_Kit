@@ -10,7 +10,7 @@ import SwiftUI
 struct RoomButtonView: View {
     @State var icon: String
     @State var roomName: String
-    @State var isSelected = false
+    var isSelected: Bool
     
     var body: some View {
         VStack {
@@ -19,11 +19,6 @@ struct RoomButtonView: View {
                 .frame(width: 70, height: 70)
                 .background(isSelected ? Color("SelectedColor") : Color("CustomGray"))
                 .cornerRadius(15)
-                .onTapGesture {
-                    withAnimation {
-                        isSelected.toggle()
-                    }
-                }
             
             Text(roomName)
                 .font(.system(size: 14))

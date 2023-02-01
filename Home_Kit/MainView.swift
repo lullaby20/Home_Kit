@@ -21,22 +21,15 @@ struct MainView: View {
                 ScrollView(.horizontal) {
                     HStack {
                         ForEach(viewModel.rooms.indices, id: \.self) { index in
-                            RoomButtonView(icon: viewModel.rooms[index].icon, roomName: viewModel.rooms[index].roomName)
+                            RoomButtonView(icon: viewModel.rooms[index].icon, roomName: viewModel.rooms[index].roomName, isSelected: index == selectedIndex)
                                 .onTapGesture {
-                                    selectedIndex = index
-//                                    viewModel.rooms[index]
+                                    withAnimation() {
+                                        selectedIndex = index
+                                    }
                                 }
                         }
                     }
                     .padding(.leading)
-                }
-                
-                if let text = Text(viewModel.rooms[selectedIndex].roomName) {
-                    text
-                }
-                
-                NavigationLink(destination: AddAccessoryView()) {
-                    Text("go")
                 }
                 
                 Text("Devices")
