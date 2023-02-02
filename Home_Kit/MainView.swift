@@ -38,6 +38,10 @@ struct MainView: View {
                     .frame(width: UIScreen.main.bounds.width * 0.915, alignment: .leading)
                     .padding(.top, 15)
                 
+                ForEach(viewModel.rooms[selectedIndex].devices, id: \.self) { device in
+                    Text(device.name)
+                }
+                
                 Spacer()
             }
             .navigationTitle("Hi ALQ")
