@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @StateObject private var viewModel = MainViewModel()
     @State private var selectedIndex = 0
+    @State var isSelected = false
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.green]
@@ -75,7 +76,7 @@ struct MainView: View {
                     .padding(.top, 30)
                 
                 ForEach(viewModel.rooms[selectedIndex].devices, id: \.self) { device in
-                    Text(device.name)
+                    DeviceView(iconName: device.icon, deviceName: device.name, isSelected: isSelected)
                 }
                 
                 Spacer()

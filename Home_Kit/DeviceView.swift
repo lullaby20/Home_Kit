@@ -8,29 +8,100 @@
 import SwiftUI
 
 struct DeviceView: View {
+    @State var iconName: String
+    @State var deviceName: String
+    @State var isSelected: Bool
+    
     var body: some View {
-        VStack {
-            HStack {
-                Image("TvOff")
-                    .resizable()
-                    .frame(width: 30, height: 30)
+        if isSelected {
+            VStack {
+                HStack {
+                    Image(iconName + "On")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                    
+                    Spacer()
+                }
+                .padding(.leading)
+                .padding(.top, 10)
                 
                 Spacer()
+                
+                HStack {
+                    Text(deviceName)
+                        .font(.system(size: 16))
+                        .fontWeight(.semibold)
+                    
+                    Spacer()
+                }
+                .padding(.leading)
+                    
+                HStack {
+                    Text("On")
+                        .font(.system(size: 15))
+                        .fontWeight(.medium)
+                        .foregroundColor(Color(.systemGray3))
+                    
+                    Spacer()
+                }
+                .padding(.leading)
+                .padding(.bottom)
+                
             }
-            .padding(.leading)
-            
-            Text("Television")
-                .font(.system(size: 16))
-            
+            .frame(width: 130, height: 130)
+            .background(.white)
+            .cornerRadius(20)
+            .onTapGesture {
+                withAnimation {
+                    isSelected.toggle()
+                }
+            }
+        } else {
+            VStack {
+                HStack {
+                    Image(iconName + "Off")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .opacity(0.5)
+                    
+                    Spacer()
+                }
+                .padding(.leading)
+                .padding(.top, 10)
+                
+                Spacer()
+                
+                HStack {
+                    Text(deviceName)
+                        .font(.system(size: 16))
+                        .fontWeight(.semibold)
+                        .opacity(0.5)
+                    
+                    Spacer()
+                }
+                .padding(.leading)
+                    
+                HStack {
+                    Text("Off")
+                        .font(.system(size: 15))
+                        .fontWeight(.medium)
+                        .foregroundColor(Color(.systemGray3))
+                        .opacity(0.5)
+                    
+                    Spacer()
+                }
+                .padding(.leading)
+                .padding(.bottom)
+                
+            }
+            .frame(width: 130, height: 130)
+            .background(.ultraThinMaterial)
+            .cornerRadius(20)
+            .onTapGesture {
+                withAnimation {
+                    isSelected.toggle()
+                }
+            }
         }
-        .frame(width: 130, height: 130)
-        .background(Color.gray)
-        .cornerRadius(20)
-    }
-}
-
-struct DeviceView_Previews: PreviewProvider {
-    static var previews: some View {
-        DeviceView()
     }
 }
