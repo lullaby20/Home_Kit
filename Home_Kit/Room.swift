@@ -23,8 +23,8 @@ struct Room: Identifiable, Hashable {
     
     static var placeholder: [Room] {
         [
-            Room(icon: "sofa", roomName: "Living room", devices: [Device(name: "Television", icon: "Tv"), Device(name: "Light", icon: "Light")]),
-            Room(icon: "bed.double", roomName: "Bedroom", devices: [Device(name: "Rgb led", icon: "Rgb")]),
+            Room(icon: "sofa", roomName: "Living room", devices: [Device(name: "Light", icon: "Light"), Device(name: "Television", icon: "Tv"), Device(name: "Apple Tv", icon: "AppleTv")]),
+            Room(icon: "bed.double", roomName: "Bedroom", devices: [Device(name: "Light", icon: "Light"), Device(name: "Rgb led", icon: "Rgb")]),
             Room(icon: "stove", roomName: "Kitchen", devices: [Device(name: "Light", icon: "Light")]),
             Room(icon: "bathtub", roomName: "Bathroom", devices: [Device(name: "Light", icon: "Light")])
         ]

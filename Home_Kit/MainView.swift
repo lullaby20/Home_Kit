@@ -12,6 +12,12 @@ struct MainView: View {
     @State private var selectedIndex = 0
     @State var isSelected = false
     
+    let columns = [
+            GridItem(.flexible()),
+            GridItem(.flexible()),
+            GridItem(.flexible())
+        ]
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -71,9 +77,12 @@ struct MainView: View {
                     .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
                     .padding(.top, 30)
                 
-                ForEach(viewModel.rooms[selectedIndex].devices, id: \.self) { device in
-                    DeviceView(iconName: device.icon, deviceName: device.name, isSelected: isSelected)
+                LazyVGrid(columns: columns) {
+                    ForEach(viewModel.rooms[selectedIndex].devices, id: \.self) { device in
+                        DeviceView(iconName: device.icon, deviceName: device.name, isSelected: isSelected)
+                    }
                 }
+                .padding(.horizontal, 10)
                 
                 Spacer()
             }

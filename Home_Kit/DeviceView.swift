@@ -48,7 +48,7 @@ struct DeviceView: View {
                 .padding(.bottom)
                 
             }
-            .frame(width: 130, height: 130)
+            .frame(width: 115, height: 115)
             .background(.white)
             .cornerRadius(20)
             .onTapGesture {
@@ -94,7 +94,7 @@ struct DeviceView: View {
                 .padding(.bottom)
                 
             }
-            .frame(width: 130, height: 130)
+            .frame(width: 115, height: 115)
             .background(.ultraThinMaterial)
             .cornerRadius(20)
             .onTapGesture {
