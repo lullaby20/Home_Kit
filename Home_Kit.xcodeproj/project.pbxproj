@@ -15,6 +15,7 @@
 		7C511C12298A7F29006254FD /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C511C0F298A7F29006254FD /* Room.swift */; };
 		7C511C13298A7F29006254FD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C511C10298A7F29006254FD /* MainViewModel.swift */; };
 		7C511C14298A7F29006254FD /* RoomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C511C11298A7F29006254FD /* RoomButtonView.swift */; };
+		7C6B50A5298D16A40052143A /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B50A4298D16A40052143A /* DeviceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		7C511C0F298A7F29006254FD /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		7C511C10298A7F29006254FD /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		7C511C11298A7F29006254FD /* RoomButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomButtonView.swift; sourceTree = "<group>"; };
+		7C6B50A4298D16A40052143A /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				7C511C0F298A7F29006254FD /* Room.swift */,
 				7C511C11298A7F29006254FD /* RoomButtonView.swift */,
 				21620AA5298A4C73007968FC /* AddAccessoryView.swift */,
+				7C6B50A4298D16A40052143A /* DeviceView.swift */,
 				7C1778E82988FB320081C5A0 /* Assets.xcassets */,
 				7C1778EA2988FB320081C5A0 /* Preview Content */,
 			);
@@ -152,6 +155,7 @@
 				21620AA6298A4C73007968FC /* AddAccessoryView.swift in Sources */,
 				7C511C0E298A7F08006254FD /* MainView.swift in Sources */,
 				7C511C14298A7F29006254FD /* RoomButtonView.swift in Sources */,
+				7C6B50A5298D16A40052143A /* DeviceView.swift in Sources */,
 				7C1778E52988FB310081C5A0 /* Home_KitApp.swift in Sources */,
 				7C511C12298A7F29006254FD /* Room.swift in Sources */,
 				7C511C13298A7F29006254FD /* MainViewModel.swift in Sources */,
