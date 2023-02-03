@@ -12,10 +12,6 @@ struct MainView: View {
     @State private var selectedIndex = 0
     @State var isSelected = false
     
-    init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.green]
-    }
-    
     var body: some View {
         NavigationView {
             VStack {
@@ -24,21 +20,21 @@ struct MainView: View {
                     .fontWeight(.semibold)
                     .foregroundColor(Color(.systemGray3))
                     .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
+                    .padding(.bottom, -15)
                 HStack {
                     Text("My Home")
                         .font(.title)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
-                        .frame(width: 160)
                     
                     Spacer()
                     
                     Image(systemName: "house.fill")
                         .foregroundColor(.white)
                         .font(.system(size: 27))
-                        .padding(.trailing)
                         .padding(.bottom, 7)
                 }
+                .frame(width: UIScreen.main.bounds.width * 0.9)
                 
                 Divider()
                     .overlay(.white)
