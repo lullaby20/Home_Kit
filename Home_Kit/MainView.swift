@@ -50,18 +50,21 @@ struct MainView: View {
                     .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
                     .padding(.top, 10)
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(viewModel.rooms.indices, id: \.self) { index in
-                            RoomButtonView(icon: viewModel.rooms[index].icon, roomName: viewModel.rooms[index].roomName, isSelected: index == selectedIndex)
-                                .onTapGesture {
-                                    withAnimation(.easeOut) {
-                                        selectedIndex = index
+                ScrollViewReader { scrollview in
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(viewModel.rooms.indices, id: \.self) { index in
+                                RoomButtonView(icon: viewModel.rooms[index].icon, roomName: viewModel.rooms[index].roomName, isSelected: index == selectedIndex)
+                                    .onTapGesture {
+                                        withAnimation(.easeOut) {
+                                            selectedIndex = index
+                                            scrollview.scrollTo(index)
+                                        }
                                     }
-                                }
+                            }
                         }
+                        .padding(.leading)
                     }
-                    .padding(.leading)
                 }
                 
                 Text("Devices")
