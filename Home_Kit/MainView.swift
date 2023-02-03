@@ -43,6 +43,13 @@ struct MainView: View {
                     .overlay(.white)
                     .frame(width: UIScreen.main.bounds.width * 0.9)
                 
+                Text("Rooms")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                    .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
+                    .padding(.top, 10)
+                
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(viewModel.rooms.indices, id: \.self) { index in
@@ -59,9 +66,10 @@ struct MainView: View {
                 
                 Text("Devices")
                     .font(.title3)
-                    .bold()
-                    .frame(width: UIScreen.main.bounds.width * 0.915, alignment: .leading)
-                    .padding(.top, 15)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                    .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
+                    .padding(.top, 30)
                 
                 ForEach(viewModel.rooms[selectedIndex].devices, id: \.self) { device in
                     Text(device.name)
@@ -70,7 +78,7 @@ struct MainView: View {
                 Spacer()
             }
             .background(content: {
-                Image("BackgroundImageThree")
+                LinearGradient(colors: [Color("BackgroundPurple"), Color("BackgroundBlue")], startPoint: .topLeading, endPoint: .bottomTrailing)
                     .ignoresSafeArea()
             })
         }
