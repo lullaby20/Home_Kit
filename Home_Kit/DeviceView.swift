@@ -18,6 +18,10 @@ struct DeviceView: View {
                 Spacer()
             }
             .padding(.leading)
+            
+            Text("Television")
+                .font(.system(size: 16))
+            
         }
         .frame(width: 130, height: 130)
         .background(Color.gray)
