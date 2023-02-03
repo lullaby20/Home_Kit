@@ -23,7 +23,7 @@ struct RoomButtonView: View {
                     .font(.system(size: 16))
                     .fontWeight(.semibold)
             }
-            .frame(width: 140, height: 70)
+            .frame(width: 140, height: 60)
             .background(.white)
             .cornerRadius(20)
         } else {
@@ -36,7 +36,7 @@ struct RoomButtonView: View {
                     .font(.system(size: 16))
                     .fontWeight(.medium)
             }
-            .frame(width: 140, height: 70)
+            .frame(width: 140, height: 60)
             .background(.ultraThinMaterial)
             .cornerRadius(20)
         }
