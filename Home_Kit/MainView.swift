@@ -86,7 +86,7 @@ struct MainView: View {
                                 Button(action: {
                                     showSheet = true
                                 }, label: {
-                                    Label("Device Details", systemImage: "gear")
+                                    Label(device.name + " Details", systemImage: "gear")
                                 })
                             }
                             .sheet(isPresented: $showSheet) {
