@@ -73,8 +73,9 @@ struct DeviceView: View {
                 
                 HStack {
                     Text(deviceName)
+                        .foregroundColor(.white)
                         .font(.system(size: 16))
-                        .fontWeight(.semibold)
+                        .fontWeight(.regular)
                         .opacity(0.5)
                     
                     Spacer()

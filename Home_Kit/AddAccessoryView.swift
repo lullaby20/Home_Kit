@@ -40,7 +40,7 @@ struct AddAccessoryView: View {
                             .padding(.bottom, 10)
                     }
                     .frame(width: 170, height: 150)
-                    .background(Color("CustomGray"))
+                    .background(.thinMaterial)
                     .cornerRadius(16)
                     .padding(.leading, 15)
                     

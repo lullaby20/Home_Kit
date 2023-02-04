@@ -9,8 +9,10 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject private var viewModel = MainViewModel()
-    @State private var selectedIndex = 0
+    @State var selectedIndex = 0
     @State var isSelected = false
+    @State var showSheet = false
+    @State var percentage: Float = 38
     
     let columns = [
             GridItem(.flexible()),
@@ -80,14 +82,27 @@ struct MainView: View {
                 LazyVGrid(columns: columns) {
                     ForEach(viewModel.rooms[selectedIndex].devices, id: \.self) { device in
                         DeviceView(iconName: device.icon, deviceName: device.name, isSelected: isSelected)
+                            .contextMenu {
+                                Button(action: {
+                                    showSheet = true
+                                }, label: {
+                                    Label("Device Details", systemImage: "gear")
+                                })
+                            }
+                            .sheet(isPresented: $showSheet) {
+                                CustomView(percentage: $percentage)
+                                    .frame(width: 300, height: 100)
+                                    .rotationEffect(Angle(degrees: -90))
+                                    .presentationDetents([.large, .medium])
+                            }
                     }
                 }
-                .padding(.horizontal, 10)
+                .padding(.horizontal, 15)
                 
                 Spacer()
             }
             .background(content: {
-                LinearGradient(colors: [Color("BackgroundPurple"), Color("BackgroundBlue")], startPoint: .topLeading, endPoint: .bottomTrailing)
+                LinearGradient(colors: [Color("BackgroundPurple"), .gray, Color("BackgroundBlue")], startPoint: .topLeading, endPoint: .bottomTrailing)
                     .ignoresSafeArea()
             })
         }
