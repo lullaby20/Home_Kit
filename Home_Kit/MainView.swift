@@ -61,7 +61,7 @@ struct MainView: View {
                                     .onTapGesture {
                                         withAnimation(.easeOut) {
                                             selectedIndex = index
-                                            scrollview.scrollTo(index)
+                                            scrollview.scrollTo(index, anchor: .center)
                                         }
                                     }
                             }
