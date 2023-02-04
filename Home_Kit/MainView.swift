@@ -90,10 +90,15 @@ struct MainView: View {
                                 })
                             }
                             .sheet(isPresented: $showSheet) {
-                                CustomView(percentage: $percentage)
-                                    .frame(width: 300, height: 100)
-                                    .rotationEffect(Angle(degrees: -90))
+                                ZStack {
+                                    Color("BackgroundGray")
+                                        .ignoresSafeArea()
+                                    
+                                    CustomView(percentage: $percentage)
+                                        .frame(width: 300, height: 100)
+                                        .rotationEffect(Angle(degrees: -90))
                                     .presentationDetents([.large, .medium])
+                                }
                             }
                     }
                 }
