@@ -30,6 +30,7 @@ struct DeviceView: View {
                 HStack {
                     Text(deviceName)
                         .font(.system(size: 16))
+                        .foregroundColor(.black)
                         .fontWeight(.semibold)
                     
                     Spacer()

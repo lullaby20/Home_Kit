@@ -29,6 +29,7 @@ struct MainView: View {
                     .foregroundColor(Color(.systemGray3))
                     .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
                     .padding(.bottom, -15)
+
                 HStack {
                     Text("My Home")
                         .font(.title)

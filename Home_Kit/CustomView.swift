@@ -15,10 +15,16 @@ struct CustomView: View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
                 Rectangle()
-                    .foregroundColor(Color(.systemGray3))
+                    .foregroundColor(.gray)
                 Rectangle()
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(.white)
                     .frame(width: geometry.size.width * CGFloat(self.percentage / 100))
+                
+                Image(systemName: "lightbulb.fill")
+                    .foregroundColor(.black.opacity(0.3))
+                    .font(.system(size: 25))
+                    .rotationEffect(Angle(degrees: 90))
+                    .padding(.leading, 30)
             }
             .cornerRadius(30)
             .gesture(DragGesture(minimumDistance: 0)
