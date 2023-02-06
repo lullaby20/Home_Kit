@@ -10,21 +10,7 @@ import SwiftUI
 struct CustomView: View {
 
     @Binding var percentage: Float
-    @State var deviceName: String
-    var sliderIcon: String {
-        switch deviceName {
-        case "Television", "Speaker":
-            return "speaker.wave.2.fill"
-        case "Light", "Lamp", "Rgb Led":
-            return "lightbulb.fill"
-        case "Fan", "Wall Pocket":
-            return "bolt.fill"
-        case "Thermostat":
-            return "thermometer.medium"
-        default:
-            return "Unknown"
-        }
-    }
+    @State var sliderIcon: String
 
     var body: some View {
         GeometryReader { geometry in

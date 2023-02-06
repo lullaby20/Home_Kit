@@ -13,6 +13,24 @@ struct MainView: View {
     @State var isSelected = false
     @State var showSheet = false
     @State var percentage: Float = 38
+    func getSliderIcon(device name: String) -> String {
+        switch name {
+        case "Television", "Speaker", "AppleTv":
+            return "speaker.wave.2.fill"
+        case "Light", "Lamp", "Rgb Led":
+            return "lightbulb.fill"
+        case "Fan", "Wall Pocket":
+            return "bolt.fill"
+        case "Thermostat":
+            return "thermometer.medium"
+        case "Curtains":
+            return "curtains.closed"
+        default:
+            return "Unknown"
+        }
+    }
+    
+    @State var sliderIcon = ""
     
     let columns = [
             GridItem(.flexible()),
@@ -85,6 +103,7 @@ struct MainView: View {
                         DeviceView(iconName: device.icon, deviceName: device.name, isSelected: isSelected)
                             .contextMenu {
                                 Button(action: {
+                                    sliderIcon = getSliderIcon(device: device.name)
                                     showSheet = true
                                 }, label: {
                                     Label(device.name + " Details", systemImage: "gear")
@@ -95,7 +114,7 @@ struct MainView: View {
                                     Color("BackgroundGray")
                                         .ignoresSafeArea()
                                     
-                                    CustomView(percentage: $percentage, deviceName: device.name)
+                                    CustomView(percentage: $percentage, sliderIcon: sliderIcon)
                                         .frame(width: 300, height: 100)
                                         .rotationEffect(Angle(degrees: -90))
                                     .presentationDetents([.large, .medium])
