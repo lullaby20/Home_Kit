@@ -9,34 +9,6 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject private var viewModel = MainViewModel()
-    @State var selectedIndex = 0
-    @State var isSelected = false
-    @State var showSheet = false
-    @State var percentage: Float = 38
-    func getSliderIcon(device name: String) -> String {
-        switch name {
-        case "Television", "Speaker", "AppleTv":
-            return "speaker.wave.2.fill"
-        case "Light", "Lamp", "Rgb Led":
-            return "lightbulb.fill"
-        case "Fan", "Wall Pocket":
-            return "bolt.fill"
-        case "Thermostat":
-            return "thermometer.medium"
-        case "Curtains":
-            return "curtains.closed"
-        default:
-            return "Unknown"
-        }
-    }
-    
-    @State var sliderIcon = ""
-    
-    let columns = [
-            GridItem(.flexible()),
-            GridItem(.flexible()),
-            GridItem(.flexible())
-        ]
     
     var body: some View {
         NavigationView {
@@ -78,10 +50,10 @@ struct MainView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(viewModel.rooms.indices, id: \.self) { index in
-                                RoomButtonView(icon: viewModel.rooms[index].icon, roomName: viewModel.rooms[index].roomName, isSelected: index == selectedIndex)
+                                RoomButtonView(icon: viewModel.rooms[index].icon, roomName: viewModel.rooms[index].roomName, isSelected: index == viewModel.selectedIndex)
                                     .onTapGesture {
                                         withAnimation(.easeOut) {
-                                            selectedIndex = index
+                                            viewModel.selectedIndex = index
                                             scrollview.scrollTo(index, anchor: .center)
                                         }
                                     }
@@ -98,23 +70,33 @@ struct MainView: View {
                     .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
                     .padding(.top, 30)
                 
-                LazyVGrid(columns: columns) {
-                    ForEach(viewModel.rooms[selectedIndex].devices, id: \.self) { device in
-                        DeviceView(iconName: device.icon, deviceName: device.name, isSelected: isSelected)
+                LazyVGrid(columns: [GridItem(.flexible()),
+                                    GridItem(.flexible()),
+                                    GridItem(.flexible())]) {
+                    ForEach(viewModel.rooms[viewModel.selectedIndex].devices, id: \.self) { device in
+                        DeviceView(iconName: device.icon, deviceName: device.name, isSelected: viewModel.isSelected)
                             .contextMenu {
                                 Button(action: {
-                                    sliderIcon = getSliderIcon(device: device.name)
-                                    showSheet = true
+                                    viewModel.sliderIcon = viewModel.getSliderIcon(device: device.name)
+                                    viewModel.showSheet = true
                                 }, label: {
                                     Label(device.name + " Details", systemImage: "gear")
                                 })
+                                
+                                if device.name == "Rgb Led" {
+                                    Button {
+                                        
+                                    } label: {
+                                        Label("Change Led color", systemImage: "lightbulb.led")
+                                    }
+                                }
                             }
-                            .sheet(isPresented: $showSheet) {
+                            .sheet(isPresented: $viewModel.showSheet) {
                                 ZStack {
                                     Color("BackgroundGray")
                                         .ignoresSafeArea()
                                     
-                                    CustomView(percentage: $percentage, sliderIcon: sliderIcon)
+                                    CustomView(percentage: $viewModel.percentage, sliderIcon: viewModel.sliderIcon)
                                         .frame(width: 300, height: 100)
                                         .rotationEffect(Angle(degrees: -90))
                                     .presentationDetents([.large, .medium])
