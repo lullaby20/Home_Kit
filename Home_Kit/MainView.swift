@@ -95,7 +95,7 @@ struct MainView: View {
                                     Color("BackgroundGray")
                                         .ignoresSafeArea()
                                     
-                                    CustomView(percentage: $percentage)
+                                    CustomView(percentage: $percentage, deviceName: device.name)
                                         .frame(width: 300, height: 100)
                                         .rotationEffect(Angle(degrees: -90))
                                     .presentationDetents([.large, .medium])

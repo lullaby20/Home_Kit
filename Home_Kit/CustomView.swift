@@ -10,6 +10,21 @@ import SwiftUI
 struct CustomView: View {
 
     @Binding var percentage: Float
+    @State var deviceName: String
+    var sliderIcon: String {
+        switch deviceName {
+        case "Television", "Speaker":
+            return "speaker.wave.2.fill"
+        case "Light", "Lamp", "Rgb Led":
+            return "lightbulb.fill"
+        case "Fan", "Wall Pocket":
+            return "bolt.fill"
+        case "Thermostat":
+            return "thermometer.medium"
+        default:
+            return "Unknown"
+        }
+    }
 
     var body: some View {
         GeometryReader { geometry in
@@ -20,7 +35,7 @@ struct CustomView: View {
                     .foregroundColor(.white)
                     .frame(width: geometry.size.width * CGFloat(self.percentage / 100))
                 
-                Image(systemName: "lightbulb.fill")
+                Image(systemName: sliderIcon)
                     .foregroundColor(.black.opacity(0.3))
                     .font(.system(size: 25))
                     .rotationEffect(Angle(degrees: 90))
