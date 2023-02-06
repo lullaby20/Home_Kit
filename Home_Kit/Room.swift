@@ -23,10 +23,10 @@ struct Room: Identifiable, Hashable {
     
     static var placeholder: [Room] {
         [
-            Room(icon: "sofa", roomName: "Living room", devices: [Device(name: "Light", icon: "Light"), Device(name: "Television", icon: "Tv"), Device(name: "Apple Tv", icon: "AppleTV")]),
-            Room(icon: "bed.double", roomName: "Bedroom", devices: [Device(name: "Light", icon: "Light"), Device(name: "Rgb led", icon: "Rgb")]),
-            Room(icon: "stove", roomName: "Kitchen", devices: [Device(name: "Light", icon: "Light")]),
-            Room(icon: "bathtub", roomName: "Bathroom", devices: [Device(name: "Light", icon: "Light")])
+            Room(icon: "sofa", roomName: "Living room", devices: [Device(name: "Light", icon: "Light"), Device(name: "Television", icon: "Tv"), Device(name: "Apple Tv", icon: "AppleTV"), Device(name: "Lamp", icon: "Lamp"), Device(name: "Curtains", icon: "Curtains"), Device(name: "Wall Pocket", icon: "Pocket"), Device(name: "Thermostat", icon: "Thermostat"), Device(name: "Fan", icon: "Fan")]),
+            Room(icon: "bed.double", roomName: "Bedroom", devices: [Device(name: "Light", icon: "Light"), Device(name: "Rgb led", icon: "Rgb"), Device(name: "Bluetooth Speaker", icon: "Speaker"), Device(name: "Curtains", icon: "Curtains"), Device(name: "Wall Pocket", icon: "Pocket"), Device(name: "Thermostat", icon: "Thermostat"), Device(name: "Fan", icon: "Fan")]),
+            Room(icon: "stove", roomName: "Kitchen", devices: [Device(name: "Light", icon: "Light"), Device(name: "Curtains", icon: "Curtains"), Device(name: "Thermostat", icon: "Thermostat"), Device(name: "Wall Pocket", icon: "Pocket")]),
+            Room(icon: "bathtub", roomName: "Bathroom", devices: [Device(name: "Light", icon: "Light"), Device(name: "Thermostat", icon: "Thermostat")])
         ]
     }
 }
