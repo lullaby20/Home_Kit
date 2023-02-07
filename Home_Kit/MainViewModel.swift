@@ -14,6 +14,7 @@ final class MainViewModel: ObservableObject {
     @Published var showSheet = false
     @Published var percentage: Float = 38
     @Published var sliderIcon = ""
+    @Published var currentDeviceName = ""
     
     func getSliderIcon(device name: String) -> String {
         switch name {

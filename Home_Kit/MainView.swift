@@ -19,7 +19,7 @@ struct MainView: View {
                     .foregroundColor(Color(.systemGray3))
                     .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
                     .padding(.bottom, -15)
-                    .padding(.top, 25)
+                    .padding(.top, 35)
 
                 HStack {
                     Text("My Home")
@@ -79,29 +79,14 @@ struct MainView: View {
                             .contextMenu {
                                 Button(action: {
                                     viewModel.sliderIcon = viewModel.getSliderIcon(device: device.name)
+                                    viewModel.currentDeviceName = device.name
                                     viewModel.showSheet = true
                                 }, label: {
                                     Label(device.name + " Details", systemImage: "gear")
                                 })
-                                
-                                if device.name == "Rgb Led" {
-                                    Button {
-                                        
-                                    } label: {
-                                        Label("Change Led color", systemImage: "lightbulb.led")
-                                    }
-                                }
                             }
                             .sheet(isPresented: $viewModel.showSheet) {
-                                ZStack {
-                                    Color("BackgroundGray")
-                                        .ignoresSafeArea()
-                                    
-                                    CustomView(percentage: $viewModel.percentage, sliderIcon: viewModel.sliderIcon)
-                                        .frame(width: 300, height: 100)
-                                        .rotationEffect(Angle(degrees: -90))
-                                    .presentationDetents([.large, .medium])
-                                }
+                                DeviceSliderSheetView(percentage: $viewModel.percentage, sliderIcon: viewModel.sliderIcon, deviceName: viewModel.currentDeviceName)
                             }
                     }
                 }
