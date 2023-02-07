@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct AddAccessoryView: View {
+    
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+    
     var body: some View {
         NavigationView {
-            GeometryReader { geo in
-                ZStack {
-                    Image("Wallpaper")
-                        .resizable()
-                        .scaledToFill()
-                        .edgesIgnoringSafeArea(.all)
-                        .blur(radius: 10)
-                        .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
-                        .opacity(1.0)
-                }
-                    
+            VStack {
+                HStack {
                     VStack {
                         HStack {
-                            Image(systemName: "plus.circle")
+                            Image(systemName: "plus")
                                 .font(.system(size: 23))
+                                .foregroundColor(.white)
+                                .padding(10)
+                                .background(.black.opacity(0.3))
+                                .cornerRadius(30)
                                 .padding(.leading, 10)
                                 .padding(.top, 10)
                             
@@ -33,25 +33,34 @@ struct AddAccessoryView: View {
                         Spacer()
                         
                         Text("Add Accessory")
-                            .font(.system(size: 16))
-                            .foregroundColor(.black)
+                            .font(.system(size: 17))
+                            .foregroundColor(.white)
                             .frame(width: 160, alignment: .leading)
                             .padding(.leading, 15)
                             .padding(.bottom, 10)
                     }
                     .frame(width: 170, height: 150)
-                    .background(.thinMaterial)
+                    .background(.ultraThinMaterial)
                     .cornerRadius(16)
                     .padding(.leading, 15)
+                    .padding(.top, 15)
                     
-                    .navigationTitle("My Home")
+                    Spacer()
                 }
+                Spacer()
             }
+            .background(content: {
+                LinearGradient(colors: [Color("BackgroundPurple"), .gray, Color("BackgroundBlue")], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .ignoresSafeArea()
+            })
+            
+            .navigationTitle("My Home")
         }
     }
-
-struct AddAccessoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddAccessoryView()
-    }
 }
+    
+    struct AddAccessoryView_Previews: PreviewProvider {
+        static var previews: some View {
+            AddAccessoryView()
+        }
+    }
