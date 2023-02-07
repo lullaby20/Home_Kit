@@ -53,7 +53,6 @@ struct AddAccessoryView: View {
                 LinearGradient(colors: [Color("BackgroundPurple"), .gray, Color("BackgroundBlue")], startPoint: .topLeading, endPoint: .bottomTrailing)
                     .ignoresSafeArea()
             })
-            
             .navigationTitle("My Home")
         }
     }
