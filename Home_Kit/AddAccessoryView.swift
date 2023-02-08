@@ -17,6 +17,17 @@ struct AddAccessoryView: View {
         NavigationView {
             VStack {
                 HStack {
+                    Text("My Home")
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding(.horizontal)
+                        .padding(.top, 5)
+                    
+                    Spacer()
+                }
+                
+                HStack {
                     VStack {
                         HStack {
                             Image(systemName: "plus")
@@ -43,7 +54,7 @@ struct AddAccessoryView: View {
                     .background(.ultraThinMaterial)
                     .cornerRadius(16)
                     .padding(.leading, 15)
-                    .padding(.top, 15)
+                    .padding(.top, 5)
                     
                     Spacer()
                 }
@@ -53,7 +64,6 @@ struct AddAccessoryView: View {
                 LinearGradient(colors: [Color("BackgroundPurple"), .gray, Color("BackgroundBlue")], startPoint: .topLeading, endPoint: .bottomTrailing)
                     .ignoresSafeArea()
             })
-            .navigationTitle("My Home")
         }
     }
 }

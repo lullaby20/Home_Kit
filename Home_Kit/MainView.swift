@@ -29,10 +29,12 @@ struct MainView: View {
                     
                     Spacer()
                     
-                    Image(systemName: "house.fill")
-                        .foregroundColor(.white)
-                        .font(.system(size: 27))
-                        .padding(.bottom, 7)
+                    NavigationLink(destination: AddAccessoryView()) {
+                        Image(systemName: "plus")
+                            .font(.system(size: 25))
+                            .foregroundColor(.white)
+                            .cornerRadius(30)
+                    }
                 }
                 .frame(width: UIScreen.main.bounds.width * 0.9)
                 
