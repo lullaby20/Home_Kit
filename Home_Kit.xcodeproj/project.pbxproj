@@ -17,6 +17,7 @@
 		7C511C13298A7F29006254FD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C511C10298A7F29006254FD /* MainViewModel.swift */; };
 		7C511C14298A7F29006254FD /* RoomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C511C11298A7F29006254FD /* RoomButtonView.swift */; };
 		7C609E792992A15700A000A4 /* DeviceSliderSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C609E782992A15700A000A4 /* DeviceSliderSheetView.swift */; };
+		7C609E7D2993A42E00A000A4 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C609E7C2993A42E00A000A4 /* LaunchScreen.swift */; };
 		7C6B50A5298D16A40052143A /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B50A4298D16A40052143A /* DeviceView.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		7C511C10298A7F29006254FD /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		7C511C11298A7F29006254FD /* RoomButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomButtonView.swift; sourceTree = "<group>"; };
 		7C609E782992A15700A000A4 /* DeviceSliderSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSliderSheetView.swift; sourceTree = "<group>"; };
+		7C609E7C2993A42E00A000A4 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		7C6B50A4298D16A40052143A /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				7C1778E42988FB310081C5A0 /* Home_KitApp.swift */,
+				7C609E7C2993A42E00A000A4 /* LaunchScreen.swift */,
 				7C511C0D298A7F08006254FD /* MainView.swift */,
 				7C511C10298A7F29006254FD /* MainViewModel.swift */,
 				7C511C0F298A7F29006254FD /* Room.swift */,
@@ -160,6 +163,7 @@
 			files = (
 				21620AA6298A4C73007968FC /* AddAccessoryView.swift in Sources */,
 				7C511C0E298A7F08006254FD /* MainView.swift in Sources */,
+				7C609E7D2993A42E00A000A4 /* LaunchScreen.swift in Sources */,
 				7C511C14298A7F29006254FD /* RoomButtonView.swift in Sources */,
 				7C6B50A5298D16A40052143A /* DeviceView.swift in Sources */,
 				7C1778E52988FB310081C5A0 /* Home_KitApp.swift in Sources */,
