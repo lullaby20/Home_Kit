@@ -8,11 +8,6 @@
 import SwiftUI
 
 struct AddAccessoryView: View {
-    
-    init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-    }
-    
     @State var isShowing = false
     
     var body: some View {
