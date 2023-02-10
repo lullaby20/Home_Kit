@@ -59,14 +59,22 @@ struct AddAccessoryView: View {
                         Spacer()
                     }
                 }
+                .sheet(isPresented: $isShowing) {
+                    ZStack {
+                        Color.white
+                            .ignoresSafeArea()
+                        
+                        AddAccessorySheetView(isShowing: $isShowing)
+                            .presentationDetents([.height(530)])
+                    }
+                }
+                
                 Spacer()
             }
             .background(content: {
                 LinearGradient(colors: [Color("BackgroundPurple"), .gray, Color("BackgroundBlue")], startPoint: .topLeading, endPoint: .bottomTrailing)
                     .ignoresSafeArea()
             })
-            
-            AddAccessorySheetView(isShowing: $isShowing)
         }
     }
 }
