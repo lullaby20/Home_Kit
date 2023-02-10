@@ -21,6 +21,7 @@
 		7C609E8B2995505500A000A4 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C609E8A2995505500A000A4 /* CameraPreview.swift */; };
 		7C6B50A5298D16A40052143A /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B50A4298D16A40052143A /* DeviceView.swift */; };
 		7CD27A8E299585420046387A /* AddAccessorySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD27A8D299585420046387A /* AddAccessorySheetView.swift */; };
+		7CD27A92299620020046387A /* AppleTvControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD27A91299620020046387A /* AppleTvControlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		7C609E8A2995505500A000A4 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		7C6B50A4298D16A40052143A /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
 		7CD27A8D299585420046387A /* AddAccessorySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccessorySheetView.swift; sourceTree = "<group>"; };
+		7CD27A91299620020046387A /* AppleTvControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTvControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				7C6B50A4298D16A40052143A /* DeviceView.swift */,
 				7C511C11298A7F29006254FD /* RoomButtonView.swift */,
 				7C609E782992A15700A000A4 /* DeviceSliderSheetView.swift */,
+				7CD27A91299620020046387A /* AppleTvControlView.swift */,
 				7C609E8429954C4900A000A4 /* CameraModel.swift */,
 				7C609E8A2995505500A000A4 /* CameraPreview.swift */,
 				7CD27A8D299585420046387A /* AddAccessorySheetView.swift */,
@@ -208,6 +211,7 @@
 				7C1778E52988FB310081C5A0 /* Home_KitApp.swift in Sources */,
 				7CD27A8E299585420046387A /* AddAccessorySheetView.swift in Sources */,
 				7C609E792992A15700A000A4 /* DeviceSliderSheetView.swift in Sources */,
+				7CD27A92299620020046387A /* AppleTvControlView.swift in Sources */,
 				7C609E8B2995505500A000A4 /* CameraPreview.swift in Sources */,
 				7C511C12298A7F29006254FD /* Room.swift in Sources */,
 				7C511C13298A7F29006254FD /* MainViewModel.swift in Sources */,

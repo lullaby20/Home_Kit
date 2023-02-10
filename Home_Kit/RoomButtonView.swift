@@ -42,9 +42,3 @@ struct RoomButtonView: View {
         }
     }
 }
-
-struct RoomButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        RoomButtonView(icon: "sofa", roomName: "Living room", isSelected: false)
-    }
-}

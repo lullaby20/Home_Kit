@@ -88,7 +88,11 @@ struct MainView: View {
                                 })
                             }
                             .sheet(isPresented: $viewModel.showSheet) {
-                                DeviceSliderSheetView(percentage: $viewModel.percentage, sliderIcon: viewModel.sliderIcon, deviceName: viewModel.currentDeviceName)
+                                if viewModel.currentDeviceName == "Apple Tv" {
+                                    AppleTvControlView()
+                                } else {
+                                    DeviceSliderSheetView(percentage: $viewModel.percentage, sliderIcon: viewModel.sliderIcon, deviceName: viewModel.currentDeviceName)
+                                }
                             }
                     }
                 }
