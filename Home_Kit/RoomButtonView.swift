@@ -13,32 +13,17 @@ struct RoomButtonView: View {
     var isSelected: Bool
     
     var body: some View {
-        if isSelected {
-            HStack {
-                Image(systemName: icon)
-                    .foregroundColor(.black)
-                    .font(.system(size: 16))
-                Text(roomName)
-                    .foregroundColor(.black)
-                    .font(.system(size: 16))
-                    .fontWeight(.semibold)
-            }
-            .frame(width: 140, height: 60)
-            .background(.white)
-            .cornerRadius(20)
-        } else {
-            HStack {
-                Image(systemName: icon)
-                    .foregroundColor(.white)
-                    .font(.system(size: 16))
-                Text(roomName)
-                    .foregroundColor(.white)
-                    .font(.system(size: 16))
-                    .fontWeight(.medium)
-            }
-            .frame(width: 140, height: 60)
-            .background(.ultraThinMaterial)
-            .cornerRadius(20)
+        HStack {
+            Image(systemName: icon)
+                .foregroundColor(isSelected ? .black : .white)
+                .font(.system(size: 16))
+            Text(roomName)
+                .foregroundColor(isSelected ? .black : .white)
+                .font(.system(size: 16))
+                .fontWeight(.medium)
         }
+        .frame(width: 140, height: 60)
+        .background(isSelected ? .white : .white.opacity(0.2))
+        .cornerRadius(20)
     }
 }

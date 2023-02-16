@@ -13,96 +13,50 @@ struct DeviceView: View {
     @State var isSelected: Bool
     
     var body: some View {
-        if isSelected {
-            VStack {
-                HStack {
-                    Image(iconName + "On")
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                    
-                    Spacer()
-                }
-                .padding(.leading)
-                .padding(.top, 10)
+        VStack {
+            HStack {
+                Image(iconName + (isSelected ? "On" : "Off"))
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    .opacity(isSelected ? 1 : 0.5)
                 
                 Spacer()
-                
-                HStack {
-                    Text(deviceName)
-                        .font(.system(size: 16))
-                        .foregroundColor(.black)
-                        .fontWeight(.semibold)
-                    
-                    Spacer()
-                }
-                .padding(.leading)
-                    
-                HStack {
-                    Text("On")
-                        .font(.system(size: 15))
-                        .fontWeight(.medium)
-                        .foregroundColor(Color(.systemGray3))
-                    
-                    Spacer()
-                }
-                .padding(.leading)
-                .padding(.bottom)
-                
             }
-            .frame(width: 115, height: 115)
-            .background(.white)
-            .cornerRadius(20)
-            .onTapGesture {
-                withAnimation {
-                    isSelected.toggle()
-                }
-            }
-        } else {
-            VStack {
-                HStack {
-                    Image(iconName + "Off")
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                        .opacity(0.5)
-                    
-                    Spacer()
-                }
-                .padding(.leading)
-                .padding(.top, 10)
+            .padding(.leading)
+            .padding(.top, 10)
+            
+            Spacer()
+            
+            HStack {
+                Text(deviceName)
+                    .foregroundColor(isSelected ? .black : .white)
+                    .font(.system(size: 16))
+                    .fontWeight(.regular)
+                    .opacity(isSelected ? 1 : 0.5)
                 
                 Spacer()
-                
-                HStack {
-                    Text(deviceName)
-                        .foregroundColor(.white)
-                        .font(.system(size: 16))
-                        .fontWeight(.regular)
-                        .opacity(0.5)
-                    
-                    Spacer()
-                }
-                .padding(.leading)
-                    
-                HStack {
-                    Text("Off")
-                        .font(.system(size: 15))
-                        .fontWeight(.medium)
-                        .foregroundColor(Color(.systemGray3))
-                        .opacity(0.5)
-                    
-                    Spacer()
-                }
-                .padding(.leading)
-                .padding(.bottom)
-                
             }
-            .frame(width: 115, height: 115)
-            .background(.ultraThinMaterial)
-            .cornerRadius(20)
-            .onTapGesture {
-                withAnimation {
-                    isSelected.toggle()
-                }
+            .padding(.leading)
+                
+            HStack {
+                Text(isSelected ? "On" : "Off")
+                    .font(.system(size: 15))
+                    .fontWeight(.medium)
+                    .foregroundColor(Color(.systemGray3))
+                    .opacity(0.5)
+                
+                Spacer()
+            }
+            .padding(.leading)
+            .padding(.bottom)
+            
+        }
+        .frame(width: 115, height: 115)
+        .background(isSelected ? .white : .white.opacity(0.2))
+        .cornerRadius(20)
+        .onTapGesture {
+            withAnimation {
+                isSelected.toggle()
             }
         }
     }
