@@ -42,7 +42,7 @@ struct DeviceView: View {
                 Text(isSelected ? "On" : "Off")
                     .font(.system(size: 15))
                     .fontWeight(.medium)
-                    .foregroundColor(Color(.systemGray3))
+                    .foregroundColor(isSelected ? Color(.systemGray) : Color(.systemGray3))
                     .opacity(0.5)
                 
                 Spacer()

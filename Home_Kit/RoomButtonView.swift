@@ -22,7 +22,7 @@ struct RoomButtonView: View {
                 .font(.system(size: 16))
                 .fontWeight(.medium)
         }
-        .frame(width: 140, height: 60)
+        .frame(width: 140, height: 55)
         .background(isSelected ? .white : .white.opacity(0.2))
         .cornerRadius(20)
     }

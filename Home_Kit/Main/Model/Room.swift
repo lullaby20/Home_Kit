@@ -19,7 +19,7 @@ struct Room: Identifiable, Hashable {
     let id = UUID()
     let icon: String
     let roomName: String
-    let devices: [Device]
+    var devices: [Device]
     
     static var placeholder: [Room] {
         [

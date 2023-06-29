@@ -35,6 +35,7 @@ struct MainView: View {
                             .foregroundColor(.white)
                             .cornerRadius(30)
                     }
+
                 }
                 .frame(width: UIScreen.main.bounds.width * 0.9)
                 
@@ -55,7 +56,7 @@ struct MainView: View {
                             ForEach(viewModel.rooms.indices, id: \.self) { index in
                                 RoomButtonView(icon: viewModel.rooms[index].icon, roomName: viewModel.rooms[index].roomName, isSelected: index == viewModel.selectedIndex)
                                     .onTapGesture {
-                                        withAnimation(.easeOut) {
+                                        withAnimation(.easeInOut) {
                                             viewModel.selectedIndex = index
                                             scrollview.scrollTo(index, anchor: .center)
                                         }
@@ -71,7 +72,7 @@ struct MainView: View {
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
                     .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
-                    .padding(.top, 30)
+                    .padding(.top, 25)
                 
                 LazyVGrid(columns: [GridItem(.flexible()),
                                     GridItem(.flexible()),
